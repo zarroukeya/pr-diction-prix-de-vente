@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction de Prix Immobilier</title>
+</head>
+<body>
+    <h1>Prédiction de Prix Immobilier</h1>
+    <label for="budget">Entrez votre budget de construction réel :</label>
+    <input type="number" id="budget" name="budget">
+    <button onclick="predictPrice()">Prédire le prix</button>
+    <p id="predictedPrice"></p>
+
+    <script>
+        async function predictPrice() {
+            const budget = document.getElementById('budget').value;
+            const response = await fetch('http://127.0.0.1:8000/predict/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "budget_construction_reel": parseFloat(budget) })
+            });
+            const data = await response.json();
+            document.getElementById('predictedPrice').innerText = `Prix prédit : ${data.predicted_price}`;
+        }
+    </script>
+</body>
+</html>
+
