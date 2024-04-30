@@ -1,0 +1,128 @@
+Gestionbasededonnee As screen:
+
+    Button2 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =97
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Text: ="Gestion Base de donées"
+        Width: =1271
+        X: =42
+        Y: =46
+        ZIndex: =3
+
+    Button2_1 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =159
+        OnSelect: =Navigate(GestionFournisseur)
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =20
+        Text: ="Gestion  Des Fournisseurs"
+        Width: =348
+        X: =93
+        Y: =216
+        ZIndex: =4
+
+    Button2_2 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =159
+        OnSelect: =Navigate(GestionClient)
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =20
+        Text: ="Gestion Des Clients"
+        Width: =348
+        X: =493
+        Y: =216
+        ZIndex: =5
+
+    Button2_3 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =159
+        OnSelect: =Navigate(Gestionmateriel)
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =20
+        Text: ="Gestion Des Matéières De Construction"
+        Width: =348
+        X: =903
+        Y: =216
+        ZIndex: =6
+
+    Button2_4 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =159
+        OnSelect: =Navigate(GestionImmobilier)
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =20
+        Text: ="Gestion Des Immobilliers"
+        Width: =348
+        X: =93
+        Y: =481
+        ZIndex: =7
+
+    Button2_5 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =159
+        OnSelect: =Navigate('gestion commande')
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =20
+        Text: ="Gestion Des Vents"
+        Width: =348
+        X: =498
+        Y: =481
+        ZIndex: =8
+
+    Button2_6 As button:
+        Fill: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =159
+        OnSelect: =Navigate(Gestionpaiement)
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =20
+        Text: ="Gestion Des Paiements"
+        Width: =348
+        X: =903
+        Y: =481
+        ZIndex: =9
+
+    Button7_4 As button:
+        BorderColor: =RGBA(39, 67, 125, 1)
+        BorderThickness: =5
+        Color: =RGBA(39, 67, 125, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =62
+        OnSelect: =Navigate(Gestionbasededonnee);
+        Size: =19
+        Text: ="Annuler"
+        Width: =390
+        X: =469
+        Y: =680
+        ZIndex: =10
+

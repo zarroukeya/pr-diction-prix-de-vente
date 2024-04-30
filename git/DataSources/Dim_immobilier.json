@@ -1,0 +1,28 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-27T20:57:12.0450000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "budget_construction_prevu": "budget_construction_prevu",
+      "budget_construction_reel": "budget_construction_reel",
+      "code_immobilier": "code_immobilier",
+      "designation": "designation",
+      "famille_immobilier": "famille_immobilier",
+      "localisation": "localisation",
+      "noms": "noms",
+      "periode_construction_prevue": "periode_construction_prevue",
+      "periode_construction_reelle": "periode_construction_reelle",
+      "prix_de_vente": "prix_de_vente"
+    },
+    "DatasetName": "DESKTOP-RSFN8HH%5cSQLEXPRESS,immobiliers",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Dim_immobilier",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

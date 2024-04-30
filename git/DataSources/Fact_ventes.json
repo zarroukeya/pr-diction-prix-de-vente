@@ -1,0 +1,26 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-27T20:57:12.0450000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "code_immobilier": "code_immobilier",
+      "code_materiel": "code_materiel",
+      "date_vente": "date_vente",
+      "id_date": "id_date",
+      "id_fournisseur": "id_fournisseur",
+      "id_paiement": "id_paiement",
+      "id_vente": "id_vente",
+      "total_vente": "total_vente"
+    },
+    "DatasetName": "DESKTOP-RSFN8HH%5cSQLEXPRESS,immobiliers",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Fact_ventes",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

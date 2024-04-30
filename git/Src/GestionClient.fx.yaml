@@ -1,0 +1,218 @@
+GestionClient As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+
+    HeaderContainer1 As groupContainer.horizontalAutoLayoutContainer:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =6
+        Fill: =RGBA(39, 67, 125, 1)
+        Height: =97
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =1300
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        Label1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            FontWeight: =FontWeight.Bold
+            Size: =30
+            Text: =" Gestion Client"
+            ZIndex: =1
+
+    "ListeClient As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtrée"
+        BorderColor: =RGBA(39, 67, 125, 1)
+        BorderThickness: =6
+        DelayItemLoading: =true
+        Fill: =RGBA(39, 67, 125, 1)
+        Height: =501
+        Items: =Dim_client
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Navigate(histriqueCommande)
+        ShowNavigation: =true
+        TemplatePadding: =0
+        TemplateSize: =104
+        Transition: =Transition.Push
+        Width: =805
+        X: =535
+        Y: =253
+        ZIndex: =1
+
+        Image4 As image:
+            Height: =72
+            Image: =
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.adresse_mail
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle3.Size * 1.8)) / 2
+            ZIndex: =2
+
+        Subtitle3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.nom
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title5.Width
+            X: =Title5.X
+            Y: =Title5.Y + Title5.Height
+            ZIndex: =3
+
+        NextArrow7 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Afficher les détails de l'élément"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator7 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle9 As rectangle:
+            Height: =Parent.TemplateHeight - Separator7.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    HeaderContainer1_1 As groupContainer.horizontalAutoLayoutContainer:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =6
+        Fill: =RGBA(39, 67, 125, 1)
+        Height: =72
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =805
+        X: =535
+        Y: =160
+        ZIndex: =2
+
+    Rectangle3 As rectangle:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(39, 67, 125, 1)
+        Height: =594
+        Width: =464
+        X: =40
+        Y: =160
+        ZIndex: =3
+
+    Ajouterclient_1 As button:
+        Color: =RGBA(39, 67, 125, 1)
+        DisabledColor: =RGBA(39, 67, 125, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =47
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: |
+            =Navigate(ajouterClient) +   NewForm (ajouterclient)
+        PaddingRight: =
+        PaddingTop: =16
+        RadiusTopRight: =16
+        Size: =16
+        Text: ="Ajouter  Client"
+        VerticalAlign: =VerticalAlign .Middle
+        Width: =336
+        X: =104
+        Y: =398
+        ZIndex: =4
+
+    suppclient_1 As button:
+        AutoDisableOnSelect: =false
+        Color: =RGBA(39, 67, 125, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: =Navigate(supprimerclient)
+        PaddingTop: =
+        RadiusTopRight: =16
+        Size: =16
+        Text: ="Supprimer  Client"
+        VerticalAlign: =VerticalAlign .Middle
+        Width: =336
+        X: =104
+        Y: =496
+        ZIndex: =5
+
+    Ajouterclient_2 As button:
+        Color: =RGBA(39, 67, 125, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =47
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: =EditForm(modiffclients);Navigate(modifierClient)
+        PaddingRight: =
+        PaddingTop: =16
+        RadiusTopRight: =16
+        Size: =16
+        Text: ="Modifier  client"
+        VerticalAlign: =VerticalAlign .Middle
+        Width: =336
+        X: =104
+        Y: =589
+        ZIndex: =6
+
+    Dropdown2 As dropdown:
+        ChevronBackground: =RGBA(39, 67, 125, 1)
+        Height: =37
+        Items: =Dim_client
+        SelectionFill: =RGBA(39, 67, 125, 1)
+        Width: =775
+        X: =550
+        Y: =176
+        ZIndex: =8
+
+    Image3 As image:
+        BorderColor: =RGBA(39, 67, 125, 1)
+        Height: =150
+        Image: ='téléchargement (2)'
+        Width: =374
+        X: =82
+        Y: =197
+        ZIndex: =9
+

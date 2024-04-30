@@ -1,0 +1,11 @@
+tb As screen:
+
+    PowerBI1 As powerbi:
+        DashboardId: =""
+        Height: =768
+        TileUrl: |-
+            ="https://app.powerbi.com/view?r=eyJrIjoiOTNhNDMyOGMtNzgyYy00YTNhLWI4MTctM2JhZjg2ODY2NzM0IiwidCI6ImRiZDY2NjRkLTRlYjktNDZlYi05OWQ4LTVjNDNiYTE1M2M2MSIsImMiOjl9&fbclid=IwAR3pzFKQrMlHBiIAjc9asaYlPy0VcYGx5WePyGsfHxbrDCPVfu3LmpKmEPs"
+        Width: =1366
+        WorkspaceId: =""
+        ZIndex: =1
+

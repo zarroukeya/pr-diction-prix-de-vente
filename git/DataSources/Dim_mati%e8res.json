@@ -1,0 +1,28 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-27T20:57:12.0450000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "code_immobilier": "code_immobilier",
+      "code_materiel": "code_materiel",
+      "date_achat": "date_achat",
+      "Description": "Description",
+      "id_fournisseur": "id_fournisseur",
+      "nom_fournisseur": "nom_fournisseur",
+      "nom_immobilier": "nom_immobilier",
+      "Prix_d_achat": "Prix_d_achat",
+      "quantite_disponible": "quantite_disponible",
+      "Types_materiel": "Types_materiel"
+    },
+    "DatasetName": "DESKTOP-RSFN8HH%5cSQLEXPRESS,immobiliers",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Dim_matières",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

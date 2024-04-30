@@ -1,0 +1,537 @@
+supprimerpaiement As screen:
+
+    Rectangle7_44 As rectangle:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Fill: =RGBA(39, 67, 125, 1)
+        Height: =108
+        Width: =1302
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Rectangle7_45 As rectangle:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Fill: =RGBA(39, 67, 125, 1)
+        Height: =108
+        Width: =1302
+        X: =40
+        Y: =640
+        ZIndex: =3
+
+    Button1_50 As button:
+        Color: =RGBA(39, 67, 125, 1)
+        DisabledColor: =RGBA(39, 67, 125, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: =Navigate(Gestionpaiement);ScreenTransition.Fade
+        Size: =20
+        Text: ="Retour"
+        Width: =260
+        X: =112
+        Y: =662
+        ZIndex: =4
+
+    Icon1_20 As icon.Undo:
+        Height: =49
+        Icon: =Icon.Undo
+        Width: =56
+        X: =127
+        Y: =669
+        ZIndex: =5
+
+    Button1_49 As button:
+        Color: =RGBA(39, 67, 125, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: =Navigate(ListeFournisseur)
+        Size: =20
+        Text: ="Consulter liste  des paiements"
+        Width: =392
+        X: =495
+        Y: =661
+        ZIndex: =6
+
+    Button1_51 As button:
+        Color: =RGBA(39, 67, 125, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: =Remove(Dim_paiement,LookUp(Dim_paiement,code_paiement=(Dropdown7.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1Bcode_paiement')));Navigate(ListePaiement);Notify("Suppression réussie", NotificationType.Success) 
+        Size: =20
+        Text: ="Enregistrer        "
+        Width: =237
+        X: =1007
+        Y: =662
+        ZIndex: =7
+
+    Icon4_21 As icon.Save:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(39, 67, 125, 1)
+        Height: =56
+        Icon: =Icon.Save
+        Width: =49
+        X: =1172
+        Y: =665
+        ZIndex: =8
+
+    Label2_17 As label:
+        Align: =Align.Center
+        Color: =RGBA(39, 67, 125, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =67
+        Size: =25
+        Text: ="Supprimer Paiement"
+        Width: =627
+        X: =330
+        Y: =66
+        ZIndex: =12
+
+    Form3 As form:
+        BorderThickness: =4
+        DataSource: =Dim_paiement
+        Height: =355
+        Item: =LookUp(Dim_paiement,code_paiement = Dropdown7.Selected.code_paiement)
+        NumberOfColumns: =1
+        X: =296
+        Y: =254
+        ZIndex: =15
+
+        code_paiement_DataCard3 As typedDataCard.numberEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="code_paiement"
+            Default: =ThisItem.code_paiement
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Dim_paiement],DataSourceInfo.DisplayName,code_paiement)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =Value(DataCardValue115.Text)
+            Width: =796
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey115 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Size: =16
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue115 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey115.Y + DataCardKey115.Height + 5
+                ZIndex: =2
+
+            ErrorMessage115 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue115.Y + DataCardValue115.Height
+                ZIndex: =3
+
+            StarVisible115 As label:
+                Align: =Align.Center
+                Height: =DataCardKey115.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey115.Y
+                ZIndex: =4
+
+        date_paiement_DataCard3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="date_paiement"
+            Default: =ThisItem.date_paiement
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Dim_paiement],DataSourceInfo.DisplayName,date_paiement)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Dim_paiement], DataSourceInfo.MaxLength, date_paiement)
+            Required: =false
+            Update: =DataCardValue116.Text
+            Width: =796
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey116 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Size: =16
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue116 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey116.Y + DataCardKey116.Height + 5
+                ZIndex: =2
+
+            ErrorMessage116 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue116.Y + DataCardValue116.Height
+                ZIndex: =3
+
+            StarVisible116 As label:
+                Align: =Align.Center
+                Height: =DataCardKey116.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey116.Y
+                ZIndex: =4
+
+        id_paiement_DataCard6 As typedDataCard.numberEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="id_paiement"
+            Default: =ThisItem.id_paiement
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Dim_paiement],DataSourceInfo.DisplayName,id_paiement)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =Value(DataCardValue117.Text)
+            Width: =796
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey117 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Size: =16
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue117 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey117.Y + DataCardKey117.Height + 5
+                ZIndex: =2
+
+            ErrorMessage117 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue117.Y + DataCardValue117.Height
+                ZIndex: =3
+
+            StarVisible117 As label:
+                Align: =Align.Center
+                Height: =DataCardKey117.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey117.Y
+                ZIndex: =4
+
+        methode_paiement_DataCard3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="methode_paiement"
+            Default: =ThisItem.methode_paiement
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Dim_paiement],DataSourceInfo.DisplayName,methode_paiement)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Dim_paiement], DataSourceInfo.MaxLength, methode_paiement)
+            Required: =false
+            Update: =DataCardValue118.Text
+            Width: =796
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey118 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Size: =16
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue118 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey118.Y + DataCardKey118.Height + 5
+                ZIndex: =2
+
+            ErrorMessage118 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue118.Y + DataCardValue118.Height
+                ZIndex: =3
+
+            StarVisible118 As label:
+                Align: =Align.Center
+                Height: =DataCardKey118.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey118.Y
+                ZIndex: =4
+
+        montant_DataCard3 As typedDataCard.numberEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="montant"
+            Default: =ThisItem.montant
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Dim_paiement],DataSourceInfo.DisplayName,montant)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =Value(DataCardValue119.Text)
+            Width: =796
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey119 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Size: =16
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue119 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey119.Y + DataCardKey119.Height + 5
+                ZIndex: =2
+
+            ErrorMessage119 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue119.Y + DataCardValue119.Height
+                ZIndex: =3
+
+            StarVisible119 As label:
+                Align: =Align.Center
+                Height: =DataCardKey119.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey119.Y
+                ZIndex: =4
+
+        statut_paiement_DataCard3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="statut_paiement"
+            Default: =ThisItem.statut_paiement
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Dim_paiement],DataSourceInfo.DisplayName,statut_paiement)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Dim_paiement], DataSourceInfo.MaxLength, statut_paiement)
+            Required: =false
+            Update: =DataCardValue120.Text
+            Width: =796
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey120 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =34
+                Size: =16
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue120 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey120.Y + DataCardKey120.Height + 5
+                ZIndex: =2
+
+            ErrorMessage120 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue120.Y + DataCardValue120.Height
+                ZIndex: =3
+
+            StarVisible120 As label:
+                Align: =Align.Center
+                Height: =DataCardKey120.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey120.Y
+                ZIndex: =4
+
+    Dropdown7 As dropdown:
+        BorderThickness: =4
+        ChevronBackground: =RGBA(39, 67, 125, 1)
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Items: =Dim_paiement
+        SelectionFill: =RGBA(39, 67, 125, 1)
+        Size: =16
+        X: =479
+        Y: =172
+        ZIndex: =16
+

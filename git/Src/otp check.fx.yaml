@@ -1,0 +1,128 @@
+"'otp check' As screen.'tabletLayout_Tutorial_ver3.0'":
+
+    RectTextBkg1_4 As rectangle:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(149, 149, 149, 1)
+        Height: =Parent.Height
+        Width: =Parent.Width / 2
+        X: =Parent.Width/2
+        ZIndex: =1
+
+    Image5_4 As image:
+        BorderThickness: =5
+        Height: =483
+        Image: ='téléchargement (3)'
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =483
+        X: =783
+        Y: =142
+        ZIndex: =8
+
+    LabelSkip1_5 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        BorderColor: =Self.Color
+        BorderThickness: =5
+        Color: =RGBA(9, 33, 98, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =2
+        FontWeight: =FontWeight.Bold
+        Height: =99
+        OnSelect: =Set(_guideStep, Last(TutorialNavigator1.AllItems).Step)
+        Size: =25
+        TabIndex: =0
+        Text: ="Merci de réinitialiser votre mot de passe"
+        Width: =498
+        X: =84
+        Y: =73
+        ZIndex: =9
+
+    Label1_19 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(9, 33, 98, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =45
+        Size: =26
+        Text: ="Entrer votre mot de passe"
+        Width: =518
+        X: =60
+        Y: =264
+        ZIndex: =25
+
+    Label1_18 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(9, 33, 98, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =26
+        Text: ="Confirmer votr mot de passe"
+        Width: =546
+        X: =60
+        Y: =434
+        ZIndex: =27
+
+    TextInput1_9 As text:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =3
+        Default: =""
+        Height: =46
+        Mode: =If(var_password_visible,TextMode.SingleLine,TextMode.Password)
+        Size: =20
+        Width: =546
+        X: =53
+        Y: =338
+        ZIndex: =34
+
+    TextInput1_10 As text:
+        BorderColor: |-
+            =
+            If(Self.Text=TextInput1_9.Text,RGBA(9, 33, 98, 1),Color.Red)
+        BorderThickness: =3
+        Default: =""
+        Height: =46
+        Mode: =If(var_confpassword_visible,TextMode.SingleLine,TextMode.Password)
+        Size: =20
+        Width: =546
+        X: =60
+        Y: =493
+        ZIndex: =35
+
+    Icon5_2 As icon.View:
+        Height: =56
+        Icon: =If(var_password_visible,Icon.Hide,Icon.View)
+        OnSelect: |
+            =UpdateContext({var_password_visible: !var_password_visible})
+        Width: =39
+        X: =543
+        Y: =338
+        ZIndex: =36
+
+    Icon5_3 As icon.View:
+        Height: =56
+        Icon: =If(var_confpassword_visible,Icon.Hide,Icon.View)
+        OnSelect: |
+            =UpdateContext({var_confpassword_visible: !var_confpassword_visible})
+        Width: =39
+        X: =539
+        Y: =488
+        ZIndex: =37
+
+    Button7 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(149, 149, 149, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =47
+        OnSelect: |-
+            =Navigate(acceuilagent);UpdateIf(role,user_email=TextInput1_4.Text,{user_pass:TextInput1_9.Text})
+        Size: =19
+        Text: ="Valider"
+        Width: =357
+        X: =148
+        Y: =590
+        ZIndex: =38
+

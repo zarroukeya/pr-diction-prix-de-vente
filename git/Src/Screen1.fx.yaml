@@ -1,0 +1,10 @@
+Screen1 As screen:
+
+    Button8 As button:
+        OnSelect: |-
+            =Launch("file:///C:/Users/HP/Desktop/PFE/index.html")
+        Text: ="Bouton"
+        X: =40
+        Y: =40
+        ZIndex: =1
+

@@ -1,0 +1,146 @@
+"acceuil As screen.'tabletLayout_Tutorial_ver3.0'":
+
+    RectTextBkg1_1 As rectangle:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(149, 149, 149, 1)
+        Height: =Parent.Height
+        Width: =Parent.Width / 2
+        X: =Parent.Width/2
+        ZIndex: =1
+
+    Image5_1 As image:
+        BorderThickness: =5
+        Height: =483
+        Image: ='téléchargement (3)'
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =483
+        X: =783
+        Y: =142
+        ZIndex: =8
+
+    LabelSkip1_2 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        BorderColor: =Self.Color
+        BorderThickness: =5
+        Color: =RGBA(9, 33, 98, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =2
+        FontWeight: =FontWeight.Bold
+        Height: =99
+        OnSelect: =Set(_guideStep, Last(TutorialNavigator1.AllItems).Step)
+        Size: =25
+        TabIndex: =0
+        Text: ="Connecter En Tant Que Respnsable Immobilier"
+        Width: =498
+        X: =84
+        Y: =73
+        ZIndex: =9
+
+    TextInput1_2 As text:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =3
+        Default: =""
+        Height: =46
+        Width: =409
+        X: =128
+        Y: =300
+        ZIndex: =11
+
+    TextInput1_3 As text:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =3
+        Default: =""
+        Height: =46
+        Mode: = If( var_pass,TextMode.Password,TextMode.SingleLine)
+        Width: =409
+        X: =128
+        Y: =422
+        ZIndex: =12
+
+    Label1_8 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(9, 33, 98, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =36
+        Size: =20
+        Text: ="Entrer  votre adress mail"
+        Width: =445
+        X: =128
+        Y: =253
+        ZIndex: =13
+
+    Label1_9 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(9, 33, 98, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =36
+        Size: =20
+        Text: ="Entrer votre mot de passe"
+        Width: =445
+        X: =128
+        Y: =374
+        ZIndex: =14
+
+    Button3_1 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =3
+        Fill: =RGBA(149, 149, 149, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =57
+        OnSelect: =If (LookUp(role,user_email=TextInput1_2.Text).user_email=TextInput1_2.Text && LookUp(role,user_email=TextInput1_2.Text).user_pass=TextInput1_3.Text, Navigate(acceresponsabl),Notify("Adresse mail ou mot de pass incorrect ,Veuillez réessayer une autre fois",NotificationType.Error))
+        Text: ="Se connecter"
+        Width: =237
+        X: =200
+        Y: =515
+        ZIndex: =15
+
+    Icon2 As icon.ChevronRight:
+        Icon: =Icon.ChevronRight
+        OnSelect: =Navigate(acceuilagent)
+        X: =562
+        Y: =346
+        ZIndex: =16
+
+    Icon3 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(acceuilagent)
+        X: =20
+        Y: =346
+        ZIndex: =17
+
+    Button6_1 As button:
+        Color: =RGBA(116, 116, 116, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =45
+        OnSelect: =Navigate(inscription)
+        Text: ="S'inscrire"
+        Underline: =true
+        X: =422
+        Y: =692
+        ZIndex: =18
+
+    Label5_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        Size: =16
+        Text: ="vous n'avez pas encore de compte?"
+        Width: =394
+        X: =84
+        Y: =692
+        ZIndex: =19
+
+    Icon6 As icon.View:
+        Height: =33
+        Icon: =If (var_pass,Icon.View,Icon.Hide)
+        OnSelect: |-
+            =UpdateContext({var_pass:!var_pass})
+        Width: =44
+        X: =480
+        Y: =435
+        ZIndex: =20
+

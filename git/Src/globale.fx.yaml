@@ -1,0 +1,100 @@
+globale As screen:
+
+    Rectangle4 As rectangle:
+        BorderThickness: =5
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =580
+        Width: =667
+        Y: =188
+        ZIndex: =1
+
+    Rectangle4_1 As rectangle:
+        BorderColor: =RGBA(0, 13, 75, 1)
+        BorderThickness: =5
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =580
+        Width: =684
+        X: =682
+        Y: =188
+        ZIndex: =2
+
+    Rectangle4_2 As rectangle:
+        BorderThickness: =5
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =167
+        Width: =1366
+        Y: =2
+        ZIndex: =7
+
+    Label4 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(39, 67, 125, 1)
+        BorderThickness: =5
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =108
+        Size: =30
+        Text: ="Poulina Groupe Holding"
+        Width: =961
+        X: =211
+        Y: =30
+        ZIndex: =8
+
+    Image7 As image:
+        Height: =134
+        Image: ='téléchargement (3)'
+        Width: =170
+        X: =17
+        Y: =18
+        ZIndex: =9
+
+    Image2 As image:
+        BorderThickness: =5
+        Height: =282
+        Image: ='iconfinder-7-avatar-2754582_120519'
+        Width: =316
+        X: =170
+        Y: =227
+        ZIndex: =10
+
+    Image2_1 As image:
+        BorderThickness: =5
+        Height: =282
+        Image: ='iconfinder-7-avatar-2754582_120519'
+        Width: =316
+        X: =866
+        Y: =227
+        ZIndex: =11
+
+    Button7_8 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(128, 128, 128, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =79
+        OnSelect: =Navigate(acceuil)
+        Size: =19
+        Text: |-
+            ="Se connecter en tanque
+            responsable immobilier"
+        Width: =528
+        X: =66
+        Y: =532
+        ZIndex: =12
+
+    Button7_9 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(128, 128, 128, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =79
+        OnSelect: =Navigate(acceuilagent)
+        Size: =19
+        Text: |-
+            ="Se connecter en tanque
+            agent immobilier"
+        Width: =528
+        X: =760
+        Y: =532
+        ZIndex: =13
+

@@ -1,0 +1,131 @@
+{
+  "652cb547-980f-4a3a-8e50-0e51cec89968": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "gatewayObjectIdHint": "c1b3bdf0-108a-485e-b48c-9a2cf3337dbe",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1683/1.0.1683.3685/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/70eaa236abdc4e40ba20b74bd5acf661"
+    },
+    "datasets": {
+      "DESKTOP-RSFN8HH%5cSQLEXPRESS,immobiliers": {
+        "dataSources": {
+          "Dim_client": {
+            "tableName": "[dbo].[Dim_client]"
+          },
+          "Dim_fournisseur": {
+            "tableName": "[dbo].[Dim_fournisseur]"
+          },
+          "Dim_immobilier": {
+            "tableName": "[dbo].[Dim_immobilier]"
+          },
+          "Dim_matières": {
+            "tableName": "[dbo].[Dim_matières]"
+          },
+          "Dim_paiement": {
+            "tableName": "[dbo].[Dim_paiement]"
+          },
+          "dim_temps": {
+            "tableName": "[dbo].[dim_temps]"
+          },
+          "dimm_temps": {
+            "tableName": "[dbo].[dimm_temps]"
+          },
+          "Fact_ventes": {
+            "tableName": "[dbo].[Fact_ventes]"
+          },
+          "role": {
+            "tableName": "[dbo].[role]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Dim_client",
+      "Dim_fournisseur",
+      "Dim_immobilier",
+      "Dim_matières",
+      "Dim_paiement",
+      "dim_temps",
+      "dimm_temps",
+      "Fact_ventes",
+      "role"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "DESKTOP-RSFN8HH%5cSQLEXPRESS,immobiliers"
+    ],
+    "id": "652cb547-980f-4a3a-8e50-0e51cec89968"
+  },
+  "87ea679b-9a34-4d49-9825-58701d355b65": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flux logiques",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3699/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "8e92f012-e3bb-44e0-b7d9-c7cbe813cb5f": {
+          "value": "shared_office365users"
+        },
+        "workflowDisplayName": {
+          "value": "valeurs_manquante"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "3beb4eee-954c-40cf-a007-e5066d6957c1"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365users": {
+          "value": "8e92f012-e3bb-44e0-b7d9-c7cbe813cb5f"
+        },
+        "workflowDisplayName": {
+          "value": "valeurs_manquante"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "3beb4eee-954c-40cf-a007-e5066d6957c1"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "valeurs_manquante"
+    ],
+    "dependencies": {
+      "shared_office365users": "8e92f012-e3bb-44e0-b7d9-c7cbe813cb5f"
+    },
+    "dependents": [],
+    "id": "87ea679b-9a34-4d49-9825-58701d355b65"
+  },
+  "8e92f012-e3bb-44e0-b7d9-c7cbe813cb5f": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Utilisateurs d’Office\u00A0365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "87ea679b-9a34-4d49-9825-58701d355b65"
+    ],
+    "id": "8e92f012-e3bb-44e0-b7d9-c7cbe813cb5f"
+  }
+}

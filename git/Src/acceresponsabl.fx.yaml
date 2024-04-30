@@ -1,0 +1,86 @@
+"acceresponsabl As screen.'tabletLayout_Tutorial_ver3.0'":
+
+    RectTextBkg1_6 As rectangle:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(149, 149, 149, 1)
+        Height: =Parent.Height
+        Width: =Parent.Width / 2
+        X: =Parent.Width/2
+        ZIndex: =1
+
+    Image5_6 As image:
+        BorderThickness: =5
+        Height: =483
+        Image: ='téléchargement (3)'
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =483
+        X: =783
+        Y: =142
+        ZIndex: =8
+
+    LabelSkip1_7 As label:
+        Align: =Align.Center
+        BorderColor: =Self.Color
+        BorderThickness: =5
+        Color: =RGBA(9, 33, 98, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =2
+        FontWeight: =FontWeight.Bold
+        Height: =89
+        OnSelect: =Set(_guideStep, Last(TutorialNavigator1.AllItems).Step)
+        Size: =26
+        TabIndex: =0
+        Text: |-
+            ="Accès Pour Le 
+            Responsable Immobilier"
+        Width: =528
+        X: =69
+        Y: =115
+        ZIndex: =9
+
+    Button7_7 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =3
+        Fill: =RGBA(149, 149, 149, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =57
+        OnSelect: =Navigate(Gestionbasededonnee)
+        Size: =19
+        Text: ="Gestion Base De Données"
+        Width: =528
+        X: =69
+        Y: =316
+        ZIndex: =38
+
+    Button7_5 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =3
+        Fill: =RGBA(149, 149, 149, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =57
+        OnSelect: =Navigate(tb)
+        Size: =19
+        Text: ="Accés Aux Tableaux De Bord"
+        Width: =528
+        X: =69
+        Y: =475
+        ZIndex: =39
+
+    Button7_6 As button:
+        BorderColor: =RGBA(9, 33, 98, 1)
+        BorderThickness: =5
+        Fill: =RGBA(149, 149, 149, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =62
+        OnSelect: =Navigate(Gestionbasededonnee);
+        Size: =19
+        Text: ="Annuler"
+        Width: =390
+        X: =160
+        Y: =625
+        ZIndex: =40
+
